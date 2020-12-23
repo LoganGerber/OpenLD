@@ -1,14 +1,15 @@
 {
-  "name": "openld",
-  "version": "0.0.1",
-  "description": "Free, Open Source Lighting Control Application",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Logan Gerber",
-  "license": "MIT",
-  "devDependencies": {
-    "electron": "^11.0.3"
-  }
+    "name": "openld",
+    "version": "0.0.1",
+    "description": "Free, Open Source Lighting Control Application",
+    "main": "lib/backend/main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "electron ."
+    },
+    "author": "Logan Gerber",
+    "license": "MIT",
+    "devDependencies": {
+        "electron": "^11.0.3"
+    }
 }

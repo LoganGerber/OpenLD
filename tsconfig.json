@@ -6,7 +6,8 @@
         "allowUnreachableCode": false,
         "allowUnusedLabels": false,
         "lib": [
-            "ES5"
+            "ES5",
+            "DOM"
         ],
         "target": "ES5",
         "moduleResolution": "node",
@@ -18,9 +19,10 @@
         "strictNullChecks": true,
         "strictPropertyInitialization": true,
         "outDir": "./lib",
-        "declaration": true
+        "declaration": true,
+        "sourceMap": true
     },
     "include": [
-        "./src"
+        "./src/**/*"
     ]
 }
