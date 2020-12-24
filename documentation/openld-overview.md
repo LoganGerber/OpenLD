@@ -20,7 +20,7 @@ Profiles for DMX devices can be registered, loaded, and created, that will conta
 
 When programming shows using DMX devices, the devices must be put into `Groups`. A `Group` is a collection of one or more DMX devices, and is what the user will be interacting with most of the time when creating show.
 
-When programming a show, users will bring `Groups` into the `Timeline`. A copy of a group brought into the `Timeline` is called a `Group Instance`. If the same `Group` is brought into the `Timeline` again, a second `Group Instance` is created, separate from the first.
+When programming a show, users will bring `Groups` into the `Show Graph`. A copy of a group brought into the `Show Graph` is called a `Group Instance`. If the same `Group` is brought into the `Show Graph` again, a second `Group Instance` is created, separate from the first.
 
 `Group Instances` are wired together in a graph structure, showing how they lead into one another forming a show.
 
@@ -35,5 +35,5 @@ List of all available DMX devices, as well as DMX device groups.
 ### Context Area
 Area that changes depending on what item the user has selected. It will show all relevant data related to the item the user has selected. For example, if a DMX device is selected, a list of channels along with documentation for the channels is displayed. If a DMX device inside a `Group Instance` is selected, the user will be able to edit what the device does inside this `Group Instance`. If a `Group Instance` is selected, data regarding the `Group Instance` is displayed, as well as form fields to let the user change it.
 
-### Timeline
+### Show Graph
 Area that shows the graph of `Group Instances`, and how they link together to form a single show.
