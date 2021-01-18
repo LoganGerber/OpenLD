@@ -1,0 +1,38 @@
+Possible settings:
+* Language
+* Theme
+* Window layout
+* Window size
+* Login sessions
+* Preview area quality
+* Keybindings
+* Font size
+* Font family
+
+
+Settings saved with the Show file:
+* List of registered fixtures
+* List of input devices
+* Stage info (model for stage, fixtures, fixture layout, etc)
+* Show's update rate (25 fps, 29fps, 30fps, etc)
+
+
+Handling settings:
+* Settings each have a known type
+* Settings can have a condition to determine if they appear to the user
+    - Need a Setting class that holds the type, value, and condition
+* Plugins can add settings of their own
+    - There needs to be a way to register settings
+
+
+Example packages that might add settings:
+* Virtual controllers
+* Export to different formats
+* Different timeline visualizations
+* Adding different DMX fixtures
+
+
+Settings:
+* In a package, there might be extra settings that need to be defined.
+* VSCode finds settings in the extention's package.json #/contribution/configuration path
+    - This standard can be brought over to OpenLD as well.
