@@ -18,6 +18,6 @@
     "dependencies": {
         "ajv": "^7.0.3",
         "argparse": "^2.0.1",
-        "bindable-observer": "^6.0.3"
+        "bindable-observer": "^6.1.0"
     }
 }
