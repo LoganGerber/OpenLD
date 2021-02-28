@@ -58,7 +58,6 @@ export class Setting<T extends SettingValueType = SettingValueType> {
 			this.value = schema.default as T;
 		}
 		else if (!this.validation(value)) {
-			// TODO: Alert the user that the provided value was not valid, and has been changed to the default
 			this.value = schema.default as T;
 		}
 		else {
