@@ -66,16 +66,16 @@ export class Setting<T extends SettingValueType = SettingValueType> {
 	/**
 	 * ChangeValue
 	 */
-	public ChangeValue(value?: T): void {
+	public ChangeValue(value?: T): boolean {
 		if (value === undefined) {
 			this.value = this.schema.default as T;
-			return;
+			return true;
 		}
 		if (!this.validation(value)) {
-			// TODO: Alert the user that the provided value was not value, and no change has taken place.
-			return;
+			return false;
 		}
 		this.value = value;
+		return true;
 	}
 
 	/**
