@@ -1,22 +1,23 @@
 import { Event } from "bindable-observer";
+import { Setting } from "./setting";
 import { SettingValueType } from "./setting-types";
 
 export class SettingChangeEvent<T extends SettingValueType> extends Event {
-	private _settingName: string;
+	private _setting: Setting;
 	private _oldValue: T;
 	private _newValue: T;
 
-	public constructor(settingName: string, oldValue: T, newValue: T) {
+	public constructor(setting: Setting, oldValue: T, newValue: T) {
 		super();
 
-		this._settingName = settingName;
+		this._setting = setting;
 		this._oldValue = oldValue;
 		this._newValue = newValue;
 	}
 
 
-	public get settingName(): string {
-		return this._settingName;
+	public get setting(): Setting {
+		return this._setting;
 	}
 
 	public get oldValue(): T {
