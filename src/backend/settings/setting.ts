@@ -1,5 +1,9 @@
 import Ajv, { ValidateFunction, JSONSchemaType } from 'ajv';
+
 import { BooleanValueType, HomogeniusArrayValueType, MixedArrayValueType, NumberValueType, ObjectValueType, SettingValueType, StringValueType } from './setting-types';
+
+import { GlobalObserver } from '../base/event-system/global-observer';
+import { SettingChangeEvent } from './setting-change-event';
 
 const ajv = new Ajv();
 
@@ -68,13 +72,17 @@ export class Setting<T extends SettingValueType = SettingValueType> {
 	 */
 	public ChangeValue(value?: T): boolean {
 		if (value === undefined) {
+			let oldValue = this.value;
 			this.value = this.schema.default as T;
+			GlobalObserver.emit(new SettingChangeEvent<T>(this, oldValue, this.value));
 			return true;
 		}
 		if (!this.validation(value)) {
 			return false;
 		}
+		let oldValue = this.value;
 		this.value = value;
+		GlobalObserver.emit(new SettingChangeEvent<T>(this, oldValue, this.value));
 		return true;
 	}
 
