@@ -4,6 +4,7 @@ import { BooleanValueType, HomogeniusArrayValueType, MixedArrayValueType, Number
 
 import { GlobalObserver } from '../base/event-system/global-observer';
 import { SettingChangeEvent } from './setting-change-event';
+import { SettingValueError } from './setting-value-error';
 
 const ajv = new Ajv();
 
@@ -37,7 +38,7 @@ type ValueToSettingSchemaTypeMap<T extends SettingValueType> =
 	: never;
 
 
-export class Setting<T extends SettingValueType = SettingValueType> {
+export abstract class Setting<T extends SettingValueType = SettingValueType> {
 	protected value: T;
 	protected schema: ValueToSettingSchemaTypeMap<T>;
 	protected validation: ValidateFunction;
@@ -69,20 +70,20 @@ export class Setting<T extends SettingValueType = SettingValueType> {
 	/**
 	 * ChangeValue
 	 */
-	public ChangeValue(value?: T): boolean {
+	public ChangeValue(value?: T): void {
 		if (value === undefined) {
 			let oldValue = this.value;
 			this.value = this.schema.default as T;
 			GlobalObserver.emit(new SettingChangeEvent<T>(this, oldValue, this.value));
-			return true;
+			return;
 		}
+
 		if (!this.validation(value)) {
-			return false;
+			throw new SettingValueError(this.name, value);
 		}
 		let oldValue = this.value;
 		this.value = value;
 		GlobalObserver.emit(new SettingChangeEvent<T>(this, oldValue, this.value));
-		return true;
 	}
 
 	/**
@@ -103,6 +104,7 @@ export class Setting<T extends SettingValueType = SettingValueType> {
 	public GetName(): string {
 		return this.name;
 	}
+
 	public GetDescription(): string {
 		return this.description;
 	}
