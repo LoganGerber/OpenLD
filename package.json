@@ -1,23 +1,23 @@
 {
-    "name": "openld",
-    "version": "0.0.1",
-    "description": "Free, Open Source Lighting Control Application",
-    "main": "lib/backend/main.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "electron ."
-    },
-    "author": "Logan Gerber",
-    "license": "MIT",
-    "devDependencies": {
-        "@types/argparse": "^2.0.4",
-        "@types/uuid": "^8.3.0",
-        "electron": "^11.3.0",
-        "typescript": "^4.2.2"
-    },
-    "dependencies": {
-        "ajv": "^7.0.3",
-        "argparse": "^2.0.1",
-        "bindable-observer": "^6.1.0"
-    }
+	"name": "openld",
+	"version": "0.0.1",
+	"description": "Free, Open Source Lighting Control Application",
+	"main": "lib/backend/main.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "electron ."
+	},
+	"author": "Logan Gerber",
+	"license": "MIT",
+	"devDependencies": {
+		"@types/argparse": "^2.0.4",
+		"@types/uuid": "^8.3.0",
+		"electron": "^11.3.0",
+		"typescript": "^4.2.2"
+	},
+	"dependencies": {
+		"ajv": "^7.0.3",
+		"argparse": "^2.0.1",
+		"bindable-observer": "^6.2.0"
+	}
 }

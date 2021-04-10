@@ -36,3 +36,72 @@ Settings:
 * In a package, there might be extra settings that need to be defined.
 * VSCode finds settings in the extention's package.json #/contribution/configuration path
     - This standard can be brought over to OpenLD as well.
+
+
+The plan is then, to allow setting contribution points.
+	* Each contribution will be checked for validity through a schema
+		- If the schema fails, a warning is thrown and the setting is skipped
+	* The contribution point will be brought in as a schema itself
+	* The contribution point will match a standard JSON schema pattern, as well as some added fields
+		* Name is obtained using the key of the contribution
+		- description (string, description of the setting)
+		- default (dependant, default value of the setting)
+		- visibleIf? (boolean or object, condition that determines if this setting should be displayed in the user view of the settings based on the value of another setting, default true)
+			- and | or | not | extension package name key.
+				* There can only exist a single one of these directly under visibleIf
+			
+
+
+{
+	"contribution": {
+		"configuration": {
+			"settingName1": {
+				"type": ...,
+				"description": ...,
+				"default": ...,
+				...
+			},
+			"settingName2": {
+				"type": "boolean",
+				"description": "a boolean",
+				"default": false
+			},
+			"settingName3": {
+				"type": ...,
+				"description": ...,
+				"default": ...,
+				"visibleIf": {
+					"[and|or|not]": {
+						"{extensionPackageName}settingName2": {
+							... // Regular schema conditional operations https://json-schema.org/understanding-json-schema/reference/conditionals.html
+						},
+						"[or|and|not]": {
+							"{otherExtensionName}settingAlpha": {
+								...
+							},
+							"{anotherExtensionName}settingBravo": {
+								...
+							}
+						},
+						"[or|and|not]": {
+							"{otherExtensionName}settingAlpha": {
+								...
+							},
+							"{anotherExtensionName}settingBravo": {
+								...
+							}
+						},
+					}
+				}
+			},
+			"settingName4": {
+				...,
+				"visibleIf": {
+					"{extensionPackageName}setting": {
+						... // regular schema conditional operations https://json-schema.org/understanding-json-schema/reference/conditionals.html
+					}
+				}
+			}
+		}
+	}
+}
