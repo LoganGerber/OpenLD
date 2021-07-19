@@ -1,28 +1,29 @@
 {
-    "compilerOptions": {
-        "alwaysStrict": true,
-        "forceConsistentCasingInFileNames": true,
-        "allowJs": false,
-        "allowUnreachableCode": false,
-        "allowUnusedLabels": false,
-        "lib": [
-            "ES5",
-            "DOM"
-        ],
-        "target": "ES5",
-        "moduleResolution": "node",
-        "noImplicitAny": true,
-        "noImplicitReturns": true,
-        "noImplicitThis": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "strictNullChecks": true,
-        "strictPropertyInitialization": true,
-        "outDir": "./lib",
-        "declaration": true,
-        "sourceMap": true
-    },
-    "include": [
-        "./src/**/*"
-    ]
+	"compilerOptions": {
+		"alwaysStrict": true,
+		"forceConsistentCasingInFileNames": true,
+		"allowJs": false,
+		"allowUnreachableCode": false,
+		"allowUnusedLabels": false,
+		"lib": [
+			"ES5",
+			"ES6",
+			"DOM"
+		],
+		"target": "ES6",
+		"moduleResolution": "node",
+		"noImplicitAny": true,
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"strictNullChecks": true,
+		"strictPropertyInitialization": true,
+		"outDir": "./lib",
+		"declaration": true,
+		"sourceMap": true
+	},
+	"include": [
+		"./src"
+	]
 }
