@@ -33,7 +33,13 @@ This area shows a live view of what the `Show` looks like, rendered in 3D. The u
 List of all available DMX fixtures, as well as `Groups`.
 
 ### Context Area
-Area that changes depending on what item the user has selected. It will show all relevant data related to the item the user has selected. For example, if a DMX fixture is selected, a list of channels along with documentation for the channels is displayed. If a DMX fixture inside a `Group Instance` is selected, the user will be able to edit what the fixture does inside this `Group Instance`. If a `Group Instance` is selected, data regarding the `Group Instance` is displayed, as well as form fields to let the user change it.
+Area that changes depending on what item the user has selected. It will show all relevant data related to the item the user has selected.
+
+If a DMX fixture is selected, a list of channels along with documentation for the channels is displayed.
+
+If a DMX fixture inside a `Group Instance` is selected, the user will be able to edit what the fixture does inside this `Group Instance`.
+
+If a `Group Instance` is selected, data regarding the `Group Instance` is displayed, as well as form fields to let the user change it.
 
 ### Show Graph
 Area that shows the graph of `Group Instances`, and how they link together to form a single `Show`.
