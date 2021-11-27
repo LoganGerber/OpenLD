@@ -1,0 +1,39 @@
+Info needed by the user
+* Preview of what the stage/lights looks like (3d model)
+* Representation of how the show plays out (stack, graph, etc)
+* List of actions that can be taken for the currently selected object
+	- Fixture
+		Channels
+		Default values (when adding fixtures to groups)
+	- Screens
+		Image/Video
+		Effects
+		Playback speed
+		timing
+	- Groups
+		Fixtures
+			Channels
+			Default values (when creating new group instances)
+	- Group Instance
+		Fixtures
+			Channels
+			Values
+		Trigger
+		Actions
+		Priority
+		Name
+	- Transitions
+		Transition type
+		Timing
+		Trigger
+
+	How do we get this info?
+		- Stored as some "adjustable parameter list"
+		- hard coded
+		- 
+			
+
+* List of fixtures available
+* List of groups available
+* List of group instances available?
+* 
