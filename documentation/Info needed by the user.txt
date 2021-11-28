@@ -9,7 +9,7 @@ Info needed by the user
 		Image/Video
 		Effects
 		Playback speed
-		timing
+		Timing
 	- Groups
 		Fixtures
 			Channels
@@ -30,7 +30,10 @@ Info needed by the user
 	How do we get this info?
 		- Stored as some "adjustable parameter list"
 		- hard coded
-		- 
+			It can probably be hard coded, since this isn't likely to change or need much adjusting
+
+	Will there be other kinds of things things the user can select eventually?
+		- Maybe, this can just get loaded in when extension functionality gets added
 			
 
 * List of fixtures available
