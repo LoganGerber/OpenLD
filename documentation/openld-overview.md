@@ -35,7 +35,9 @@ List of all available DMX fixtures, as well as `Groups`.
 ### Context Area
 Area that changes depending on what item the user has selected. It will show all relevant data related to the item the user has selected.
 
-If a DMX fixture is selected, a list of channels along with documentation for the channels is displayed.
+If a DMX fixture is selected, a list of channels along with documentation for the channels is displayed. Also, default values for each channel will be displayed.
+
+If a screen is selected, the image/video, effects, playback speed, and any timing info will be displayed.
 
 If a DMX fixture inside a `Group Instance` is selected, the user will be able to edit what the fixture does inside this `Group Instance`.
 
