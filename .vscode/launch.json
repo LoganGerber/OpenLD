@@ -5,9 +5,9 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+			"name": "Build and Launch",
 			"type": "node",
 			"request": "launch",
-			"name": "Launch Program",
 			"skipFiles": [
 				"<node_internals>/**"
 			],
@@ -18,7 +18,24 @@
 			"preLaunchTask": "tsc: build - tsconfig.json",
 			"outFiles": [
 				"${workspaceFolder}/lib/**/*.js"
-			]
+			],
+			"outputCapture": "std"
+		},
+		{
+			"name": "Launch",
+			"type": "node",
+			"request": "launch",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"runtimeExecutable": "npm",
+			"runtimeArgs": [
+				"start"
+			],
+			"outFiles": [
+				"${workspaceFolder}/lib/**/*.js"
+			],
+			"outputCapture": "std"
 		}
 	]
 }

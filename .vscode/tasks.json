@@ -15,10 +15,11 @@
 			"detail": "Compile all src/*.ts files.",
 			"presentation": {
 				"echo": true,
-				"reveal": "always",
+				"reveal": "silent",
+				"revealProblems": "onProblem",
 				"focus": false,
 				"panel": "dedicated",
-				"showReuseMessage": true,
+				"showReuseMessage": false,
 				"clear": true
 			},
 			"runOptions": {
