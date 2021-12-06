@@ -1,3 +1,5 @@
+// import { ipcRenderer } from 'electron';
+
 const fill = document.querySelector('#fill') as Element;
 const sections = document.querySelectorAll('.drag-section');
 
@@ -49,4 +51,3 @@ function drop(e: DragEvent) {
 function getTarget(e: Event): Element {
 	return e.target as Element;
 };
-
