@@ -19,6 +19,7 @@ export abstract class SelectionManager {
 	public static async requestSelection(id: string): Promise<boolean> {
 		return new Promise<boolean>(() => {
 			if (!validate(id)) {
+				//TODO: Report error
 				return false;
 			}
 			//TODO: check if the id belongs to a valid model
