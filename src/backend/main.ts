@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
 import { join } from 'path';
 
 // Prepare main window
@@ -7,8 +7,8 @@ function createWindow(): void {
 		width: 800,
 		height: 600,
 		webPreferences: {
-			// nodeIntegration: true,
-			// enableRemoteModule: true,
+			nodeIntegration: true,
+			enableRemoteModule: true,
 			devTools: true
 		}
 	});
@@ -27,4 +27,8 @@ app.on('activate', () => {
 	if (BrowserWindow.getAllWindows().length === 0) {
 		createWindow();
 	}
+});
+
+ipcMain.on('LOL', (_, msg) => {
+	console.log(msg);
 });
