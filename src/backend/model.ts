@@ -1,6 +1,6 @@
 import { v4 } from 'uuid';
 
-export class Model {
+export default abstract class Model {
 	private readonly _uuid: string;
 
 
