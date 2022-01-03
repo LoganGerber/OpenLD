@@ -4,20 +4,20 @@ import { Model } from "./model";
 // Model types / names would get registered on launch from plugins.
 // If it's a factory, the managager can leverage a pool of models, to minimize memory allocations.
 class ModelManager {
-	private _createdModels: Record<string, Model>;
+	private _registeredModels: Record<string, Model>;
 
 	constructor() {
-		this._createdModels = {};
+		this._registeredModels = {};
 	}
 
 	public registerModel(model: Model): void {
-		if (!(model.id in this._createdModels)) {
-			this._createdModels[model.id] = model;
+		if (!(model.id in this._registeredModels)) {
+			this._registeredModels[model.id] = model;
 		}
 	}
 
 	public isRegisteredModel(model: Model): boolean {
-		return model.id in this._createdModels;
+		return model.id in this._registeredModels;
 	}
 
 	public removeModel(model: Model | string): void {
