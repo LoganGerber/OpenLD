@@ -29,7 +29,15 @@ class ModelManager {
 			modelId = model.id;
 		}
 
-		delete this._createdModels[modelId];
+		delete this._registeredModels[modelId];
+	}
+
+	public getModel(id: string): Model | null {
+		if (id in this._registeredModels) {
+			return this._registeredModels[id];
+		}
+
+		return null;
 	}
 
 }
