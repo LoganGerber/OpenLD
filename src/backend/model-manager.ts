@@ -1,4 +1,4 @@
-import { Model } from "./model";
+import Model from "./model";
 
 // TODO: Should this eventually contain a factory for creating models?
 // Model types / names would get registered on launch from plugins.
