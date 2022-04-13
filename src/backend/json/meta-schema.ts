@@ -37,10 +37,11 @@ export type JSONObjectMetaSchemaType = JSONSchemaType<OmitIndex<JSONSchemaType<J
 export type JSONNullMetaSchemaType = JSONSchemaType<OmitIndex<JSONSchemaType<JSONNullType>>>;
 
 export type JSONMetaSchemaType =
-	JSONNumberMetaSchemaType |
-	JSONStringMetaSchemaType |
-	JSONBooleanMetaSchemaType |
-	JSONMixedArrayMetaSchemaType |
-	JSONHomogeniusArrayMetaSchemaType |
-	JSONObjectMetaSchemaType |
-	JSONNullMetaSchemaType;
+	JSONNumberMetaSchemaType
+	| JSONStringMetaSchemaType
+	| JSONBooleanMetaSchemaType
+	| JSONMixedArrayMetaSchemaType
+	| JSONHomogeniusArrayMetaSchemaType
+	| JSONObjectMetaSchemaType
+	| JSONNullMetaSchemaType;
+

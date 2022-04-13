@@ -7,7 +7,8 @@ export type JSONNullType = null;
 
 export interface JSONObjectType extends Record<string, JSONValueType> {}
 
-export type JSONValueType = JSONNumberType
+export type JSONValueType =
+	JSONNumberType
 	| JSONStringType
 	| JSONBooleanType
 	| JSONMixedArrayType
